@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{494370B8-9771-4A70-AC6F-5658568339B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjectTest</RootNamespace>
+    <AssemblyName>NinjectTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>d78db368</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=3.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.3.4.1\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.3.4.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.2.1507.118, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.ChildKernel, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.ChildKernel.3.2.0.0\lib\net45-full\Ninject.Extensions.ChildKernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.ContextPreservation, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.ContextPreservation.3.2.0.0\lib\net45-full\Ninject.Extensions.ContextPreservation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.DependencyCreation, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.DependencyCreation.3.2.0.0\lib\net45-full\Ninject.Extensions.DependencyCreation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Factory">
+      <HintPath>..\packages\Ninject.Extensions.Factory.3.2.1.0\lib\net45-full\Ninject.Extensions.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Interception">
+      <HintPath>..\packages\Ninject.Extensions.Interception.3.2.0.0\lib\net45-full\Ninject.Extensions.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Interception.DynamicProxy">
+      <HintPath>..\packages\Ninject.Extensions.Interception.DynamicProxy.3.2.0.0\lib\net45-full\Ninject.Extensions.Interception.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Logging.3.2.3.0\lib\net45-full\Ninject.Extensions.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging.Log4Net, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Logging.Log4net.3.2.3.0\lib\net45-full\Ninject.Extensions.Logging.Log4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.NamedScope">
+      <HintPath>..\packages\Ninject.Extensions.NamedScope.3.2.0.0\lib\net45-full\Ninject.Extensions.NamedScope.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.0.0.2929, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.0.0\lib\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.assert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.0.0.2929, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.0.0\lib\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveBindings\Root.cs" />
+    <Compile Include="ActiveBindings\Test.cs" />
+    <Compile Include="AutoMapper\LazyInitializedMappingEngine.cs" />
+    <Compile Include="AwaitEndsEarly\Test.cs" />
+    <Compile Include="ChildKernelRebind\IService.cs" />
+    <Compile Include="ChildKernelRebind\ServiceProvider.cs" />
+    <Compile Include="ChildKernelRebind\Test.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="ClosedGenericConvention\Test.cs" />
+    <Compile Include="ClosedGenericWithBaseBindingConvention\Test.cs" />
+    <Compile Include="ConditionalBindingsForLotsOfTypesWithEagerCreation\Export.cs" />
+    <Compile Include="ConditionalBindingsForLotsOfTypesWithEagerCreation\ExportExample1.cs" />
+    <Compile Include="ConditionalBindingsForLotsOfTypesWithEagerCreation\ExportTwo.cs" />
+    <Compile Include="ConditionalBindingsForLotsOfTypesWithEagerCreation\IExport.cs" />
+    <Compile Include="ConditionalBindingsForLotsOfTypesWithEagerCreation\IExportDictionary.cs" />
+    <Compile Include="ConfigurableScopeBindingModule.cs" />
+    <Compile Include="CtorInjectBinding\Test.cs" />
+    <Compile Include="CustomFactory\Test.cs" />
+    <Compile Include="DefaultAndAlternateBindingConvention\A\QueryHandler.cs" />
+    <Compile Include="DefaultAndAlternateBindingConvention\B\QueryHandler.cs" />
+    <Compile Include="DefaultAndAlternateBindingConvention\IMyContext.cs" />
+    <Compile Include="DefaultAndAlternateBindingConvention\IQueryHandler.cs" />
+    <Compile Include="DefaultAndAlternateBindingConvention\QueryHandlerBindingConfigurator.cs" />
+    <Compile Include="DefaultAndAlternateBindingConvention\Test.cs" />
+    <Compile Include="DefaultBinding\Test.cs" />
+    <Compile Include="GenericCommandHandling\ICommandHandler.cs" />
+    <Compile Include="GenericCommandHandling\Test.cs" />
+    <Compile Include="GenericsAndReflection\Foo.cs" />
+    <Compile Include="MasstransitSubscription\MultiConstantBinding.cs" />
+    <Compile Include="MethodInterceptionByAttribute\Service.cs" />
+    <Compile Include="MethodInterceptionByAttribute\Test.cs" />
+    <Compile Include="MethodInterceptionByAttribute\IService.cs" />
+    <Compile Include="MethodInterceptionByAttribute\LogInterceptAttribute.cs" />
+    <Compile Include="MethodInterceptionByAttribute\LogInterceptor.cs" />
+    <Compile Include="MultiConfiguredBinding\IBar.cs" />
+    <Compile Include="MultiConfiguredBinding\IFoo.cs" />
+    <Compile Include="MultiConfiguredBinding\Test.cs" />
+    <Compile Include="MultiDatabaseRepository\Test.cs" />
+    <Compile Include="MultiInjectionWithWhen\Test.cs" />
+    <Compile Include="MultiNamedWrapperAlternative\ITable.cs" />
+    <Compile Include="MultiNamedWrapperAlternative\ITableProvider.cs" />
+    <Compile Include="MultiNamedWrapperAlternative\ITableWrapper.cs" />
+    <Compile Include="MultiNamedWrapperAlternative\TableWrapperProvider.cs" />
+    <Compile Include="MultiNamedWrapperAlternative\TableIdAttribute.cs" />
+    <Compile Include="MultiNamedWrapperAlternative\Test.cs" />
+    <Compile Include="MultiProvider\EnumerableStringConsumer.cs" />
+    <Compile Include="MultiProvider\EnumerableStringProvider.cs" />
+    <Compile Include="MultiProvider\Test.cs" />
+    <Compile Include="MultiTypeConvention\CommandBindingGenerator.cs" />
+    <Compile Include="MultiTypeConvention\ICommand.cs" />
+    <Compile Include="MultiTypeConvention\MenuItem.cs" />
+    <Compile Include="MultiTypeConvention\MultiTypeConventionTest.cs" />
+    <Compile Include="MyLogger.cs" />
+    <Compile Include="KnowWhereInjected\Test.cs" />
+    <Compile Include="NamedBinding\Test.cs" />
+    <Compile Include="NamedScopeConventionBinding\Test.cs" />
+    <Compile Include="NamedScopeDeterministicDisposal\IntegrationTest.cs" />
+    <Compile Include="NamedScopeDeterministicDisposal\Test2.cs" />
+    <Compile Include="NonRequestDbContext\Test.cs" />
+    <Compile Include="NotAllConvention\Test.cs" />
+    <Compile Include="OpenGenericConvention\BarHandler.cs" />
+    <Compile Include="OpenGenericConvention\BarRequest.cs" />
+    <Compile Include="OpenGenericConvention\FooHandler.cs" />
+    <Compile Include="OpenGenericConvention\IHandler.cs" />
+    <Compile Include="OpenGenericConvention\IRequest.cs" />
+    <Compile Include="OpenGenericConvention\FooRequest.cs" />
+    <Compile Include="OpenGenericConvention\Test.cs" />
+    <Compile Include="OtherLifetimeWhenFactoryGenerated\IFactory.cs" />
+    <Compile Include="OtherLifetimeWhenFactoryGenerated\Test.cs" />
+    <Compile Include="OtherLifetimeWhenFactoryGenerated\ToBeCreated.cs" />
+    <Compile Include="ParameterContextual\Test.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderTest.cs" />
+    <Compile Include="RebindDuringRunning\Test.cs" />
+    <Compile Include="RegisterConstantToAllTypes\Foo.cs" />
+    <Compile Include="RegisterConstantToAllTypes\Test.cs" />
+    <Compile Include="RegularExpressions\Test.cs" />
+    <Compile Include="Repro\181.cs" />
+    <Compile Include="Runners\AllRunner.cs" />
+    <Compile Include="Runners\IConfig.cs" />
+    <Compile Include="Runners\IControl.cs" />
+    <Compile Include="Runners\IRunnerFactory.cs" />
+    <Compile Include="Runners\IService1.cs" />
+    <Compile Include="Runners\IService2.cs" />
+    <Compile Include="Runners\Runner.cs" />
+    <Compile Include="Runners\RunnersProvider.cs" />
+    <Compile Include="Runners\Solution1.cs" />
+    <Compile Include="Runners\Solution2.cs" />
+    <Compile Include="ScopedProvider\StringProvider.cs" />
+    <Compile Include="ScopedProvider\Test.cs" />
+    <Compile Include="SignalR\Hub.cs" />
+    <Compile Include="SignalR\IHttpContext.cs" />
+    <Compile Include="SingletonBoundToMultipleTypes\Class1.cs" />
+    <Compile Include="SO36057755\Test.cs" />
+    <Compile Include="SO36424126\IPerson.cs" />
+    <Compile Include="TryGetMulti\IFoo.cs" />
+    <Compile Include="WhenHasAncestor\Test.cs" />
+    <Compile Include="WhenInjectedIntoAnyAncestorOfType\Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ContextualLongLivingDatacontextBinding\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.0.0\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.core.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="ActiveBindings\Root.cs" />
     <Compile Include="ActiveBindings\Test.cs" />
+    <Compile Include="AsyncFactory_44983826\Class1.cs" />
     <Compile Include="AutoMapper\LazyInitializedMappingEngine.cs" />
     <Compile Include="AwaitEndsEarly\Test.cs" />
     <Compile Include="ChildKernelRebind\IService.cs" />
@@ -222,7 +223,12 @@
     <Compile Include="SO36424126\IPerson.cs" />
     <Compile Include="SO38013150\Class1.cs" />
     <Compile Include="SO38013150\Test.cs" />
+    <Compile Include="SO39610282\Test.cs" />
+    <Compile Include="SO40310046\Class1.cs" />
+    <Compile Include="SO40375548\Class1.cs" />
+    <Compile Include="SO45218640\Class1.cs" />
     <Compile Include="TryGetMulti\IFoo.cs" />
+    <Compile Include="ValueByAttribute_45272232\Class1.cs" />
     <Compile Include="WhenHasAncestor\Test.cs" />
     <Compile Include="WhenInjectedIntoAnyAncestorOfType\Class1.cs" />
   </ItemGroup>
